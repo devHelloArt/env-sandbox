@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "htt-terraform-trace"
+    bucket = "htt-terraform-trace-sandbox"
     key    = "terraform/backend"
     region = "ap-northeast-2"
   }
@@ -116,6 +116,6 @@ module "traefik" {
   kubernetes_cluster_cert_data = module.aws-kubernetes-cluster.eks_cluster_certificate_data
   kubernetes_cluster_endpoint  = module.aws-kubernetes-cluster.eks_cluster_endpoint
   aws_https_arn                = "arn:aws:acm:ap-northeast-2:007370231163:certificate/3f5bf5f6-bffa-4ae6-a5d1-b495d7bd83a8"
-  
+
   eks_nodegroup_id = module.aws-kubernetes-cluster.eks_cluster_nodegroup_id
 }
